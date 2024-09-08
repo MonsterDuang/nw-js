@@ -1,0 +1,1 @@
+copy /b nw.exe+.\apps\app.nw app.exe

@@ -1,0 +1,39 @@
+{
+	"name": "test-nwjs",
+	"main": "./dist/index.html",
+	"build": {
+		"files": [
+			"dist/**/*"
+		],
+		"output": "./releases",
+		"nwVersion": "0.14.7",
+		"nwPlatforms": [
+			"win"
+		],
+		"nwArchs": [
+			"x64"
+		],
+		"overriddenProperties": {
+			"main": "./dist/index.html"
+		},
+		"targets": [
+			"zip"
+		]
+	},
+	"single-instance": false,
+	"nodejs": true,
+	"node-main": "./server.js",
+	"chromium-args": "--mixed-context --disable-text-input-focus-manager --disable-pinch --disable-translate --overscroll-history-navigation=0",
+	"window": {
+		"title": "测试nwjs",
+		"icon": "",
+		"resizeable": false,
+		"position": "center",
+		"frame": false,
+		"fullscreen": true
+	},
+	"dependencies": {
+		"express": "^4.18.1",
+		"http-proxy-middleware": "^2.0.6"
+	}
+}
