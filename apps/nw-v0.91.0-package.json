@@ -1,0 +1,45 @@
+{
+	"name": "panocreat",
+	"version": "1.0.0",
+	"main": "dist/index.html",
+	"build": {
+		"files": [
+			"dist/**/*"
+		],
+		"output": "./outputs",
+		"nwVersion": "0.91.0",
+		"nwPlatforms": [
+			"win"
+		],
+		"nwArchs": [
+			"x64"
+		],
+		"overriddenProperties": {
+			"main": "dist/index.html"
+		},
+		"targets": [
+			"zip"
+		]
+	},
+	"single-instance": false,
+	"nodejs": false,
+	"chromium-args": "--mixed-context --disable-text-input-focus-manager --disable-pinch --disable-translate --overscroll-history-navigation=0",
+	"window": {
+		"title": "全景造物",
+		"icon": "",
+		"resizeable": false,
+		"position": "center",
+		"frame": false,
+		"fullscreen": true,
+		"transparent": true
+	},
+	"scripts": {
+		"start": "run --x64 --mirror https://dl.nwjs.io .",
+		"build": "build --tasks win-x64,win-x86 --mirror https://dl.nwjs.io ."
+	},
+	"author": "Monster",
+	"license": "ISC",
+	"devDependencies": {
+		"nwjs-builder-phoenix": "^1.15.0"
+	}
+}
