@@ -1,0 +1,52 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Monster",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=7.30"
+  },
+  "scripts": {
+    "dev": "uni -p h5",
+    "build": "cross-env UNI_OUTPUT_DIR=bigscreen uni build -p h5",
+    "dev:exe": "npm run build:h5 & run --x64 --mirror https://dl.nwjs.io .",
+    "build:exe": "npm run build:h5 & build --tasks win-x64,win-x86 --mirror https://dl.nwjs.io ."
+  },
+  "devDependencies": {
+    "nwjs-builder-phoenix": "^1.15.0",
+  },
+  "main": "bigscreen/index.html",
+  "build": {
+    "files": [
+      "bigscreen/**/*"
+    ],
+    "output": "outputs",
+    "nwVersion": "0.91.0",
+    "nwPlatforms": [
+      "win"
+    ],
+    "nwArchs": [
+      "x64"
+    ],
+    "overriddenProperties": {
+      "main": "bigscreen/index.html"
+    },
+    "targets": [
+      "zip"
+    ]
+  },
+  "single-instance": false,
+  "nodejs": false,
+  "chromium-args": "--mixed-context --disable-text-input-focus-manager --disable-pinch --disable-translate --overscroll-history-navigation=0",
+  "window": {
+    "title": "",
+    "icon": "",
+    "resizeable": false,
+    "position": "center",
+    "frame": false,
+    "fullscreen": true,
+    "transparent": true
+  }
+}
